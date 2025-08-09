@@ -3,7 +3,8 @@
 ## Overview
 This project is a self learning project designed to showcase the capabilities of modern web development using React.js for the frontend.  
 The primary objective is to develop an intuitive user interface for interacting with [Microsoft Azure AI Vision Services](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-image-analysis?tabs=4-0).  
-The backend infrastructure is implemented with Node.js and is seamlessly hosted on Microsoft Azure, ensuring scalability and reliability.
+The backend infrastructure is implemented with Node.js and is hosted on Microsoft Azure, ensuring scalability and reliability.
+This project is a refactored version using Cursor + GPT-5.
 
 ## Features
 - User interface for Azure AI Vision Services
@@ -30,8 +31,8 @@ The backend infrastructure is implemented with Node.js and is seamlessly hosted 
 To get started with the project, clone the repository and install the dependencies:
 
 ```bash
-git clone https://github.com/Moustafaa91/azure_ai_vision_fe.git
-cd azure_ai_vision_fe
+git clone https://github.com/Moustafaa91/azure_ai_vision_frontend.git
+cd azure_ai_vision_frontend
 npm install
 ```
 
@@ -50,8 +51,22 @@ npm run build
 Contributions are welcome! Please create an issue or submit a pull request.
 
 ### Acknowledgments
-This project is developed as part of a learning initiative and leverages the power of AI-driven vision analysis provided by Microsoft Azure.
-Thanks to GitHub Copilot and ChatGPT for assisting with coding and development :)
+This project is developed as part of a learning the power of AI-driven vision analysis provided by Microsoft Azure.
+Thanks to GitHub Copilot and Cursor for assisting with coding and development :)
 
 ### Contact
 For any inquiries, please contact [Moustafa Attia](https://www.linkedin.com/in/mustafa1090).
+
+## Environment variables
+
+Create a `.env` file in the project root with:
+
+```
+REACT_APP_AZURE_API_URL=deployed_backend_app_calls_azure_vision_api
+CLOUDINARY_URL=cloudinary://<your_api_key>:<your_api_secret>@<cloud_name>
+REACT_APP_CLOUDINARY_UNSIGNED_PRESET=<YOUR_UNSIGNED_UPLOAD_PRESET>
+```
+
+Notes:
+- Keep API Secret private. The app uses an unsigned upload preset recommended for client uploads.
+- The leading `@` in `REACT_APP_AZURE_API_URL` is supported; the app strips it at runtime.
