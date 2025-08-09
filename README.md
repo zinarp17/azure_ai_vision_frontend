@@ -3,8 +3,8 @@
 ## Overview
 This project is a self learning project designed to showcase the capabilities of modern web development using React.js for the frontend.  
 The primary objective is to develop an intuitive user interface for interacting with [Microsoft Azure AI Vision Services](https://learn.microsoft.com/en-us/azure/ai-services/computer-vision/overview-image-analysis?tabs=4-0).  
-The backend infrastructure is implemented with Node.js and is hosted on Microsoft Azure, ensuring scalability and reliability.
-This project is a refactored version using Cursor + GPT-5.
+The backend infrastructure is implemented with Node.js and is hosted on Microsoft Azure, ensuring scalability and reliability.<br>
+**This project is a refactored version using Cursor + GPT-5.**
 
 ## Features
 - User interface for Azure AI Vision Services
