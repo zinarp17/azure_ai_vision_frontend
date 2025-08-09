@@ -25,6 +25,8 @@ import { analyzeImage } from '../services/api';
 import type { AnalyzeImageResponse } from '../types/azure';
 import GitHubIcon from '@mui/icons-material/GitHub';
 import RefreshIcon from '@mui/icons-material/Refresh';
+import LightModeIcon from '@mui/icons-material/LightMode';
+import DarkModeIcon from '@mui/icons-material/DarkMode';
 
 function a11yProps(index: number) {
   return {
@@ -153,10 +155,15 @@ export default function Landing({ isDarkMode, onToggleTheme }: LandingProps) {
           <Typography variant="h6" sx={{ flexGrow: 1, fontWeight: 700 }}>
           Azure Vision AI Image Analyzer
           </Typography>
-          <FormControlLabel
-            control={<Switch checked={isDarkMode} onChange={onToggleTheme} />}
-            label={isDarkMode ? 'Dark' : 'Light'}
-          />
+          <Stack direction="row" alignItems="center" spacing={1} sx={{ ml: 2 }}>
+            <LightModeIcon color={isDarkMode ? 'disabled' : 'warning'} fontSize="small" />
+            <Switch
+              checked={isDarkMode}
+              onChange={onToggleTheme}
+              inputProps={{ 'aria-label': 'Toggle dark mode' }}
+            />
+            <DarkModeIcon color={isDarkMode ? 'primary' : 'disabled'} fontSize="small" />
+          </Stack>
         </Toolbar>
       </AppBar>
 
@@ -166,6 +173,11 @@ export default function Landing({ isDarkMode, onToggleTheme }: LandingProps) {
             <Typography variant="h5" fontWeight={700}>
               Upload an image to analyze
             </Typography>
+
+            <Alert severity="warning">
+              Images you upload are stored in external storage to obtain a public URL for analysis. Please avoid uploading
+              personal or sensitive images.
+            </Alert>
 
             <Stack direction={{ xs: 'column', sm: 'row' }} spacing={2} alignItems="center">
               <Button variant="contained" startIcon={<UploadIcon />} component="label">
