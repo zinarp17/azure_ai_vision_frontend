@@ -7,7 +7,7 @@ type CloudinaryUploadResponse = {
 function getCloudNameFromUrl(url?: string): string | null {
   if (!url) return null;
   // cloudinary://<api_key>:<api_secret>@<cloud_name>
-  const match = url.match(/^cloudinary:\/\/[^:]+:[^@]*@([^\/?#]+)/);
+  const match = url.match(/^cloudinary:\/\/[^:]+:[^@]*@([^/?#]+)/);
   return match ? match[1] : null;
 }
 
